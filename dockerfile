@@ -28,5 +28,7 @@ COPY . .
 # Modifier permissions du script shell
 RUN chmod +x start_coturn.sh
 
+EXPOSE 3478
+
 # Lancer le script
 CMD ["./start_coturn.sh"]
