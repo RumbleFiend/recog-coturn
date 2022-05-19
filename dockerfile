@@ -1,12 +1,13 @@
 # Pull l'image ubuntu
-FROM ubuntu:18.04
+FROM node:18
 
 # Mise à jour des packages ubuntu
 RUN apt-get update 
 RUN apt-get upgrade -y
 
 # installer packages essentiels
-RUN apt-get install build-essential checkinstall zlib1g-dev -y
+RUN apt-get install build-essential checkinstall zlib1g-dev gcc -y
+RUN apt-get upgrade libstdc++6
 
 # installer le package OpenSSL
 RUN apt-get -y install openssl
@@ -25,10 +26,12 @@ ENV TURN_REALM recog.server
 # Copier les fichiers
 COPY . .
 
+RUN npm install
+
 # Modifier permissions du script shell
 RUN chmod +x start_coturn.sh
 
-EXPOSE 3478
+EXPOSE 3478 8080
 
 # Lancer le script
 CMD ["./start_coturn.sh"]
