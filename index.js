@@ -10,4 +10,4 @@ app.listen(process.env.PORT || 8080, () => {
 app.get("/", (req, res, next) => {
   res.send("<h1>COTURN SERVER GTTFO</h1>");
 });
-shell.exec("./start_coturn.sh");
+// shell.exec("./start_coturn.sh");
