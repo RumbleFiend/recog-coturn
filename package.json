@@ -9,6 +9,7 @@
   "author": "Hichem Aitouakli <alterhichem99@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "shelljs": "^0.8.5"
   }
 }

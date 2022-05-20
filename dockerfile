@@ -33,5 +33,5 @@ RUN chmod +x start_coturn.sh
 
 EXPOSE 3478 8080
 
-# Lancer le script
-CMD ["./start_coturn.sh"]
+# Lancer le sevreur
+CMD [ "node", "index.js" ]
