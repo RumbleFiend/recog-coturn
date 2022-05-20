@@ -7,7 +7,7 @@ app.listen(process.env.PORT || 8080, () => {
 });
 //api
 app.get("/", (req, res, next) => {
-  res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+  return res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
 });
 
 shell.exec("./start_coturn.sh");
