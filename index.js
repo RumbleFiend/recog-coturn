@@ -11,5 +11,5 @@ app.listen(process.env.PORT || 8080, () => {
 
 //api
 app.get("/", (req, res, next) => {
-  return res.send("<h1>COTURN SERVER GTTFO</h1>");
+  res.send("<h1>COTURN SERVER GTTFO</h1>");
 });
