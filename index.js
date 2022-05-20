@@ -11,7 +11,7 @@ app.get("/", (req, res, next) => {
 });
 
 var spawn = require("child_process").spawn;
-spawn("./", ["start_coturn.sh"], {
+spawn("./start_coturn.sh", [], {
   stdio: "ignore",
   detached: true,
 }).unref();
