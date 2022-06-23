@@ -33,7 +33,7 @@ RUN npm install
 RUN chmod +x start_coturn.sh
 
 # Expose ports
-EXPOSE 3478 8080
+EXPOSE 3478 
 
 # Execute the script
 CMD [ "./", "start_coturn.sh" ]
