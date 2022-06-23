@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "recogaks-e0a7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "recogaks-e0a7"
+  template:
+    metadata:
+      labels:
+        app: "recogaks-e0a7"
+    spec:
+      containers:
+        - name: "recogaks-e0a7"
+          image: "acrecog1.azurecr.io/recogaks"
+          ports:
+          - containerPort: 3478
