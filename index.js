@@ -1,17 +1,19 @@
-var express = require("express");
+const fastify = require("fastify");
+const app = fastify();
+app.register(require("fastify-ws"));
+const WsController = require("./controller/WebConsole");
+var os = require("os");
 
-var app = express();
+var hostname = os.hostname();
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log("Server running on port 8080");
+app.ready((err) => {
+  if (err) throw err;
+  console.log("server started...");
+  app.ws.on("connection", WsController);
 });
-//api
-app.get("/", (req, res, next) => {
-  res.send("<h1>COTURN SERVER GTTFO</h1>");
+
+app.get("/", (req, res) => {
+  res.send({ hello: hostname });
 });
 
-var spawn = require("child_process").spawn;
-spawn("./start_coturn.sh", [], {
-  stdio: "ignore",
-  detached: true,
-}).unref();
+app.listen(8000);
