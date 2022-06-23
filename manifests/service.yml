@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "recogaks-f3b5"
+    labels:
+        app: "recogaks-f3b5"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 3478
+      targetPort: 3478
+      protocol: TCP
+      name: http
+    selector:
+        app: "recogaks-f3b5"
